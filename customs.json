@@ -1,0 +1,20 @@
+{
+    "elements": {},
+    "attributes": {
+        "th:text": {
+            "context": "td"
+        },
+        "th:src": {
+            "context": "img"
+        },
+        "th:each": {
+            "context": "tr"
+        },
+        "th:href": {
+            "context": "a"
+        },
+        "th:value": {
+            "context": "input"
+        }
+    }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>CRUD KTP</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <a href="/create">Create</a>
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <tr>
+                    <th>NIK</th>
+                    <th>Tanggal Lahir</th><!-- comment -->
+                    <th>Foto</th>
+                    <th>Aksi</th>
+                </tr>
+                <tr th:each="godummy:${godummy}">
+                      <td th:text="${godummy.id}"></td><!-- comment -->
+                      <td th:text="${#dates.format(godummy.tanggal,'yyyy-MM-dd')}"></td><!-- comment -->
+                      <td><img th:src="@{${'/image?id='+ godummy.id}}" alt="image" width="200"></td><!-- comment -->
+                      <td>
+                        <a th:href="@{/edit/{id}(id=${godummy.id})}" class="btn btn-warning btn-sm">Edit</a>
+                        <a th:href="@{/delete/{id}(id=${godummy.id})}" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Mau Dihapus?')">Delete</a>
+                      </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
